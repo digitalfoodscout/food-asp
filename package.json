@@ -1,0 +1,9 @@
+{
+  "name": "food-asp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "clingo-connect": "^1.0.0",
+    "moment": "^2.18.1"
+  }
+}
