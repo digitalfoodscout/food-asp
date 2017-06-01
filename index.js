@@ -38,7 +38,7 @@ const rules = []
 let sumRule = 'lactose :- #sum {  '
 
 data.ate.forEach((ate, index) => {
-  const ateRule = `ate(${index}, ${ate.type})`
+  const ateRule = `ate(${index}, ${ate.amount}, ${ate.type})`
   rules.push(ateRule + '.')
 
   let ateWeight = 0
@@ -68,7 +68,7 @@ data.ate.forEach((ate, index) => {
     const difference = symptom.date.diff(ate.date)
 
     if (difference > 0 && difference <= 45 * 60 * 1000) {
-      const symptRule = `symptom(${index}, ${symptom.type})`
+      const symptRule = `symptom(${index}, ${symptom.strength}, ${symptom.type})`
       rules.push(symptRule + '.')
 
       let symptWeight = 0
