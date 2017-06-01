@@ -638,6 +638,12 @@ mkdirp@0.5.1, mkdirp@^0.5.0, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
+mocha-bamboo-reporter@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mocha-bamboo-reporter/-/mocha-bamboo-reporter-1.1.1.tgz#baa3d024641b736ace1afc9fa0d188413ab7e4f9"
+  dependencies:
+    mocha ">=1.8.1"
+
 mocha-eslint@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/mocha-eslint/-/mocha-eslint-3.0.1.tgz#ae72abc561cb289d2e6c143788ee182aca1a04db"
@@ -647,7 +653,7 @@ mocha-eslint@^3.0.1:
     glob-all "^3.0.1"
     replaceall "^0.1.6"
 
-mocha@^3.4.2:
+mocha@>=1.8.1, mocha@^3.4.2:
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/mocha/-/mocha-3.4.2.tgz#d0ef4d332126dbf18d0d640c9b382dd48be97594"
   dependencies:
