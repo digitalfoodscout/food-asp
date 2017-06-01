@@ -1,5 +1,6 @@
 const aspConnect = require('clingo-connect')
 const moment = require('moment')
+const logger = require('./logger');
 
 const data = {
   ate: [
@@ -92,10 +93,10 @@ sumRule += `} > 0.`
 
 rules.push(sumRule)
 
-//console.log(rules.join('\n'))
+logger.debug(rules.join('\n'))
 
 aspConnect.runASPSolver(rules).then(models => {
-  console.log(models)
+  logger.info(models)
 }).catch(err => {
-  console.log(err)
+  logger.error(err)
 })
