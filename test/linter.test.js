@@ -2,9 +2,9 @@
 
 const lint = require('mocha-eslint');
 
-const paths= [
+const paths = [
   '.',
   '!node_modules'
-]
+];
 
 lint(paths, {});
