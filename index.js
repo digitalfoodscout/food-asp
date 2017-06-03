@@ -5,10 +5,12 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const rules = [];
 
+      // Generate facts for all ingredients
       ingredients.forEach((ingredient, index) => {
         rules.push(`ingredient(${index}, ${ingredient.type}, ${ingredient.amount}).`);
       });
 
+      // Generate facts for all symptoms
       symptoms.forEach((symptom, index) => {
         rules.push(`symptom(${index}, ${symptom.type}, ${symptom.strength}).`);
       });
@@ -40,8 +42,7 @@ module.exports = {
                 break;
               }
             }
-          }
-          else {
+          } else {
             reject(`No correlation rules defined for ${ingredient.type}`);
           }
         });
@@ -53,32 +54,74 @@ module.exports = {
       const posSympType = ['bauchschmerzen', 'kopfschmerzen'];
       const posSympStrength = ['low', 'medium', 'high'];
       const posCorrelStrength = ['low', 'middle', 'high'];
+      const implementedIntolerances = ["lactose"];
 
+      // Function that generates weights for all combinations of possible
+      // amounts, symptomTypes, symptomStrengths and correlationStrengths
       // eslint-disable-next-line no-unused-vars
-      const weightFunc = function (amount, sympType, sympStrength, correlStrength) {
+      const weightFunc = function (intolerance, amount, sympType, sympStrength, correlStrength) {
+        // TODO: Implement more weights
+
+        if (intolerance === "lactose") {
+          let base = 0;
+
+          if (sympType === "bauchschmerzen") {
+            switch (amount) {
+              case "few":
+                base = 10;
+                break;
+              case "normal":
+                base = 20;
+                break;
+              case "much":
+                base = 30;
+                break;
+            }
+          }
+
+          switch (sympStrength) {
+            case "medium":
+              base *= 1.1;
+              break;
+            case "high":
+              base *= 1.2;
+              break;
+          }
+
+          return base;
+        }
+
+        // Default
         return 20;
       };
 
-      const sumRuleParts = [];
+      for (const intolerance of implementedIntolerances) {
+        const sumRuleParts = [];
 
-      for (const amount of posAmounts) {
-        for (const sympType of posSympType) {
-          for (const sympStrenght of posSympStrength) {
-            for (const correlStrength of posCorrelStrength) {
-              const weight = weightFunc(amount, sympType, sympStrenght, correlStrength);
-              sumRuleParts.push(`${weight},ingredcol(X,Y) : ingredient(X, lactose, ${amount}), symptom(Y, ${sympType}, ${sympStrenght}), correlates(X, Y, ${correlStrength})`);
+        for (const amount of posAmounts) {
+          for (const sympType of posSympType) {
+            for (const sympStrenght of posSympStrength) {
+              for (const correlStrength of posCorrelStrength) {
+                const weight = weightFunc(intolerance, amount, sympType, sympStrenght, correlStrength);
+                sumRuleParts.push(`${weight},ingredcol(X,Y) : ingredient(X, ${intolerance}, ${amount}), symptom(Y, ${sympType}, ${sympStrenght}), correlates(X, Y, ${correlStrength})`);
+              }
             }
           }
         }
+
+        const negativeWeight = -20;
+        sumRuleParts.push(`${negativeWeight},ingrednocol(X) : ingredient(X, ${intolerance}, B), not hasCol(X)`);
+
+        // Add rule to defer user has intolerance if he has correlating symptoms most of the time
+        rules.push(`${intolerance} :- #sum { ${sumRuleParts.join(';\n')} } > 100.`);
+
+        // Add rule to defer user cannot have intolerance if he
+        // has most of the time no correlating symptoms
+        rules.push(`-${intolerance} :- #sum { ${sumRuleParts.join(';\n')} } < -100.`);
       }
 
-      const negativeWeight = -20;
-      sumRuleParts.push(`${negativeWeight},ingrednocol(X) : ingredient(X, lactose, B), not hasCol(X)`);
-
-      rules.push(`lactose :- #sum { ${sumRuleParts.join(';\n')} } > 20.`);
-
       aspConnect.runASPSolver(rules).then(models => {
-        resolve({models, rules});
+        resolve({ models, rules });
       }).catch(err => {
         reject(err);
       });
