@@ -6,7 +6,8 @@ module.exports = {
   extends: 'eslint:recommended',
   env: {
     mocha: true,
-    node: true
+    node: true,
+    es6: true
   },
   rules: {
     // require or disallow use of semicolons instead of ASI
