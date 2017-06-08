@@ -1,6 +1,49 @@
 const aspConnect = require('clingo-connect');
+const moment = require('moment');
+
+const implementedIntolerances = ["lactose"];
 
 module.exports = {
+  intoleranceStatus: {
+    UNKNOWN: 'unknown',
+    LIKELY: 'likely',
+    UNLIKELY: 'unlikely'
+  },
+  analyzeUserData(foods, symptoms) {
+    return this.getIngredients(foods).then(ingredients => this.runSolver(ingredients, symptoms)).then(aspResult => {
+      const models = aspResult.models;
+      const result = {};
+        
+      implementedIntolerances.forEach(intolerance => {
+        const isInAll = models.every(model => model.indexOf(intolerance) !== -1);
+        const isInNone = models.every(model => model.indexOf(`-${intolerance}`) !== -1);
+          
+        if (isInAll) {
+          result[intolerance] = this.intoleranceStatus.LIKELY;
+        } else if (isInNone) {
+          result[intolerance] = this.intoleranceStatus.UNLIKELY;
+        } else {
+          result[intolerance] = this.intoleranceStatus.UNKNOWN;
+        }
+      });
+      
+      return result;
+    });
+  },
+  // Dummy
+  // eslint-disable-next-line no-unused-vars
+  getIngredients(foods) {
+  // eslint-disable-next-line no-unused-vars
+    return new Promise((resolve, reject) => {
+      resolve([
+        {
+          type: 'lactose',
+          amount: 'few',
+          date: moment('2017-05-24 09:30')
+        }
+      ]);
+    });
+  },
   runSolver(ingredients, symptoms) {
     return new Promise((resolve, reject) => {
       const rules = [];
@@ -54,7 +97,6 @@ module.exports = {
       const posSympType = ['bauchschmerzen', 'kopfschmerzen'];
       const posSympStrength = ['low', 'medium', 'high'];
       const posCorrelStrength = ['low', 'middle', 'high'];
-      const implementedIntolerances = ["lactose"];
 
       // Function that generates weights for all combinations of possible
       // amounts, symptomTypes, symptomStrengths and correlationStrengths

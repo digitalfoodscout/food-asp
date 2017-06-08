@@ -3,6 +3,32 @@ const foodASP = require('../');
 const should = require('should');
 
 describe('Default', () => {
+  it('should output all intolerances', done => {
+    const data = {
+      foods: [
+        {
+          // 
+          id: 'M110000',
+          amount: 100,
+          date: moment('2017-05-24 09:30')
+        }
+      ],
+      symptoms: [
+        {
+          type: 'bauchschmerzen',
+          strength: 'high',
+          date: moment('2017-05-24 09:50')
+        }
+      ]
+    };
+    
+    foodASP.analyzeUserData(data.foods, data.symptoms).should.be.fulfilled().then(intolerances => {
+      should(intolerances).be.instanceOf(Object);
+      intolerances.should.have.property('lactose', foodASP.intoleranceStatus.UNKNOWN);
+      done();
+    }).catch(done);
+  });
+  
   it('should work with example data', done => {
     const data = {
       ate: [
