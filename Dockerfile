@@ -2,7 +2,7 @@ FROM node:6
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-CMD [ "npm", "run", "start" ]
+CMD [ "npm", "test" ]
 
 # Install clingo
 ARG CLINGO_VERSION=5.2.0
