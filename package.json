@@ -5,15 +5,18 @@
   "dependencies": {
     "clingo-connect": "^1.0.0",
     "moment": "^2.18.1",
-    "should": "^11.2.1",
     "winston": "^2.3.1"
   },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha -R spec -b --recursive",
+    "bamboo": "NODE_ENV=test ./node_modules/istanbul/lib/cli.js cover --report clover -x \"**/config/**\" ./node_modules/mocha/bin/_mocha -- --ui bdd -R mocha-bamboo-reporter --recursive --reporter-options output=./coverage/mocha.json; chown -R $HOST_UID:$HOST_GID ./coverage",
+    "lint": "NODE_ENV=test ./node_modules/mocha/bin/mocha -R spec -b test/linter.test.js",
+    "coverage": "NODE_ENV=test ./node_modules/istanbul/lib/cli.js cover -x \"**/config/**\" ./node_modules/mocha/bin/_mocha -- --ui bdd -R spec -t 5000 --recursive",
     "start": "node index.js"
   },
   "devDependencies": {
     "should": "^11.2.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.2",
     "mocha-bamboo-reporter": "^1.1.1",
     "mocha-eslint": "^3.0.1"
