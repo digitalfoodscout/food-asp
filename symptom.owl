@@ -237,6 +237,20 @@
     
 
 
+    <!-- http://digitalfoodscout.me/symptom#LactoseSymptom -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#LactoseSymptom">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://digitalfoodscout.me/symptom#Tritt_Auf_Bei"/>
+                <owl:someValuesFrom rdf:resource="http://digitalfoodscout.me/symptom#Lactose"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
     <!-- http://digitalfoodscout.me/symptom#Mental -->
 
     <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Mental">
