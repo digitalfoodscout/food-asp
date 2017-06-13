@@ -1,0 +1,671 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://digitalfoodscout.me/symptom#"
+     xml:base="http://digitalfoodscout.me/symptom"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://digitalfoodscout.me/symptom"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Tritt_Auf_Bei -->
+
+    <owl:ObjectProperty rdf:about="http://digitalfoodscout.me/symptom#Tritt_Auf_Bei">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://digitalfoodscout.me/symptom#Verursacht"/>
+        <rdfs:domain rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+        <rdfs:range rdf:resource="http://digitalfoodscout.me/symptom#Intoleranz"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Verursacht -->
+
+    <owl:ObjectProperty rdf:about="http://digitalfoodscout.me/symptom#Verursacht">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://digitalfoodscout.me/symptom#Intoleranz"/>
+        <rdfs:range rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Akne -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Akne">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Antriebslosigkeit -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Antriebslosigkeit">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Mental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Augenjucken -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Augenjucken">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Ausschlag -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Ausschlag">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Bauchschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Bauchschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Verdauung"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Blähbauch -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Blähbauch">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Verdauung"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Blähungen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Blähungen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Blähbauch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Darmgeräusche -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Darmgeräusche">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Blähbauch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Durchfall -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Durchfall">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Stuhlgang"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Erbrechen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Erbrechen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Blähbauch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Erhöhte_Temperatur_bzw._grippeartiges_Gefühl -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Erhöhte_Temperatur_bzw._grippeartiges_Gefühl">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstiges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Gelenkschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Gelenkschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Haut -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Haut">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Herz-Kreislauf -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Herz-Kreislauf">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Herzrasen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Herzrasen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Intoleranz -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Intoleranz"/>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Juckreiz -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Juckreiz">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Knieschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Knieschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Konzentrationsschwierigkeiten -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Konzentrationsschwierigkeiten">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Mental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Kopfschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Kopfschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Schmerzen"/>
+        <owl:disjointWith rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Kreislaufprobleme -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Kreislaufprobleme">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Krämpfe -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Krämpfe">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Bauchschmerzen"/>
+        <owl:disjointWith rdf:resource="http://digitalfoodscout.me/symptom#Sodbrennen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Lactose -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Lactose">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Intoleranz"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Mental -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Mental">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Migräne -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Migräne">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Kopfschmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Mundaphten_oder_sonstige_Entzündungen_im_Mund -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Mundaphten_oder_sonstige_Entzündungen_im_Mund">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Muskelkater -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Muskelkater">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Muskelschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Muskelschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Müdigkeit -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Müdigkeit">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Schlaf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Niesanfälle -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Niesanfälle">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstiges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Probleme_beim_Wasserlassen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Probleme_beim_Wasserlassen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Stuhlgang"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Pusteln -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Pusteln">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Quaddeln_und_Schwellungen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Quaddeln_und_Schwellungen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Rötung -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Rötung">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Rückenschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Rückenschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schlaf -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schlaf">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schlafstörungen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schlafstörungen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Schlaf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schlechte_Sicht -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schlechte_Sicht">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Kopfschmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schmerzhaft -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schmerzhaft">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Stuhlgang"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schweißausbrüche -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schweißausbrüche">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schwindel -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schwindel">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Schwäche -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Schwäche">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Sehstörungen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Sehstörungen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstiges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Sodbrennen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Sodbrennen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Bauchschmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Sonstige -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Sonstige">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Schmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Sonstiges -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Sonstiges">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Stimmung -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Stimmung">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Mental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Stress -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Stress">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Mental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Stuhlgang -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Stuhlgang">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Verdauung"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Symptom -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Symptom"/>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Verdauung -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Verdauung">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Symptom"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://digitalfoodscout.me/symptom#Tritt_Auf_Bei"/>
+                <owl:someValuesFrom rdf:resource="http://digitalfoodscout.me/symptom#Lactose"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Verspannung -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Verspannung">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Kopfschmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Zahn-_und_Kieferschmerzen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Zahn-_und_Kieferschmerzen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstige"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Übelkeit -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Übelkeit">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Blähbauch"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Asthma/Atemnot -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Asthma/Atemnot">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstiges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Flush_(rot_werden_im_Hals-_und_Gesichtsbereich) -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Flush_(rot_werden_im_Hals-_und_Gesichtsbereich)">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Kribbeln_in_Fingern,_Beinen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Kribbeln_in_Fingern,_Beinen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Sonstiges"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Nesselsucht_(Urtikaria) -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Nesselsucht_(Urtikaria)">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Nicht_vorhanden_/_Verstopfung -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Nicht_vorhanden_/_Verstopfung">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Stuhlgang"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Raue,_pelzige_Zunge -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Raue,_pelzige_Zunge">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Haut"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Stimmungsschwankungen/Weinerlichkeit/Aggressivität -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Stimmungsschwankungen/Weinerlichkeit/Aggressivität">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Mental"/>
+    </owl:Class>
+    
+
+
+    <!-- http://digitalfoodscout.me/symptom#Tinnitus,_Ohrensausen -->
+
+    <owl:Class rdf:about="http://digitalfoodscout.me/symptom#Tinnitus,_Ohrensausen">
+        <rdfs:subClassOf rdf:resource="http://digitalfoodscout.me/symptom#Kopfschmerzen"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Akne"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Augenjucken"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Ausschlag"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Juckreiz"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Mundaphten_oder_sonstige_Entzündungen_im_Mund"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Pusteln"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Quaddeln_und_Schwellungen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Rötung"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Flush_(rot_werden_im_Hals-_und_Gesichtsbereich)"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Nesselsucht_(Urtikaria)"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Raue,_pelzige_Zunge"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Antriebslosigkeit"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Konzentrationsschwierigkeiten"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Stimmung"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Stress"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Stimmungsschwankungen/Weinerlichkeit/Aggressivität"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Bauchschmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Blähbauch"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Stuhlgang"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Blähungen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Darmgeräusche"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Erbrechen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Übelkeit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Durchfall"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Probleme_beim_Wasserlassen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Schmerzhaft"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Nicht_vorhanden_/_Verstopfung"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Erhöhte_Temperatur_bzw._grippeartiges_Gefühl"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Niesanfälle"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Sehstörungen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Asthma/Atemnot"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Kribbeln_in_Fingern,_Beinen"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Gelenkschmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Knieschmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Muskelkater"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Muskelschmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Rückenschmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Zahn-_und_Kieferschmerzen"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Haut"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Herz-Kreislauf"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Mental"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Schlaf"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Schmerzen"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Sonstiges"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Verdauung"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Migräne"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Schlechte_Sicht"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Verspannung"/>
+            <rdf:Description rdf:about="http://digitalfoodscout.me/symptom#Tinnitus,_Ohrensausen"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
